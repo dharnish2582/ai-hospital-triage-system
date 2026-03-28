@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #522B5B;
+  --color-secondary: #7A4287;
+  --color-accent: #3A1E40;
+  --color-background: #FCFAFD;
+  --color-card: rgba(255, 255, 255, 0.7);
+  --color-card-border: rgba(82, 43, 91, 0.3);
+}
+
+@layer utilities {
+  .glass-card {
+    background-color: var(--color-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(82, 43, 91, 0.4);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(82, 43, 91, 0.15);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .glass-card:hover {
+    box-shadow: 0 12px 40px rgba(82, 43, 91, 0.25);
+    border-color: rgba(82, 43, 91, 0.6);
+  }
+  
+  .glow-primary {
+    box-shadow: 0 0 15px var(--color-primary);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 8px var(--color-primary);
+  }
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-aurora {
+  background: linear-gradient(-45deg, #FCFAFD, #f3e8f5, #e6d1ea, #FCFAFD);
+  background-size: 400% 400%;
+  animation: aurora 15s ease infinite;
+}
+
+/* Custom scrollbar for logs */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(82, 43, 91, 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(82, 43, 91, 0.8);
+}
